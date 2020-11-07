@@ -15,8 +15,7 @@ namespace CursoMVC.Models
     
     public partial class cursomvcEntities : DbContext
     {
-        public cursomvcEntities()
-            : base("name=cursomvcEntities")
+        public cursomvcEntities() : base("name=cursomvcEntities")
         {
         }
     
