@@ -1,8 +1,6 @@
 ﻿using CursoMVC.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CursoMVC.Controllers
@@ -21,12 +19,12 @@ namespace CursoMVC.Controllers
             {
                 using (cursomvcEntities db = new cursomvcEntities())
                 {
-                    var list = from d in db.user where d.email == user && d.password == password && d.idState == 1 select d;
+                    IQueryable<user> list = from d in db.user where d.email == user && d.password == password && d.idState == 1 select d;
 
                     if (list.Count() > 0)
                     {
                         user oUser = list.First();
-                        Session ["user"] = oUser;
+                        Session["user"] = oUser;
                         return Content("1");
                     }
                     else

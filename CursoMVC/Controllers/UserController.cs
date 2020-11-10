@@ -106,7 +106,7 @@ namespace CursoMVC.Controllers
         {
             using (cursomvcEntities db = new cursomvcEntities())
             {
-                var oUser = db.user.Find(Id);
+                user oUser = db.user.Find(Id);
                 oUser.idState = 2; //Eliminar
 
                 db.Entry(oUser).State = System.Data.Entity.EntityState.Modified;
