@@ -15,7 +15,8 @@ namespace CursoMVC.Models
     
     public partial class cursomvcEntities : DbContext
     {
-        public cursomvcEntities() : base("name=cursomvcEntities")
+        public cursomvcEntities()
+            : base("name=cursomvcEntities")
         {
         }
     
@@ -26,5 +27,7 @@ namespace CursoMVC.Models
     
         public virtual DbSet<cstate> cstate { get; set; }
         public virtual DbSet<user> user { get; set; }
+        public virtual DbSet<animal> animal { get; set; }
+        public virtual DbSet<animal_class> animal_class { get; set; }
     }
 }
